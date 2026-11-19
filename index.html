@@ -10,13 +10,13 @@
   </style>
 </head>
 <body>
-  <h1>Adivina el Número (1 - 20)</h1>
-  <input type="number" id="intento" min="1" max="20" placeholder="Tu número" />
+  <h1>Adivina el Número (1 - 50)</h1>
+  <input type="number" id="intento" min="1" max="50" placeholder="Tu número" />
   <button id="btnProbar">Probar</button>
   <p id="mensaje">Escribe un número y presiona Probar.</p>
 
   <script>
-    let secreto = Math.floor(Math.random() * 20) + 1;
+    let secreto = Math.floor(Math.random() * 50) + 1;
     const input = document.getElementById("intento");
     const mensaje = document.getElementById("mensaje");
     const boton = document.getElementById("btnProbar");
