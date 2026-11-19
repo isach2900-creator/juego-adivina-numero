@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Adivina el Número</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 420px; margin: 40px auto; text-align: center; }
+    input, button { padding: 8px 12px; font-size: 16px; margin: 6px; }
+    #mensaje { font-weight: bold; margin-top: 14px; }
+  </style>
+</head>
+<body>
+  <h1>Adivina el Número (1 - 20)</h1>
+  <input type="number" id="intento" min="1" max="20" placeholder="Tu número" />
+  <button id="btnProbar">Probar</button>
+  <p id="mensaje">Escribe un número y presiona Probar.</p>
+
+  <script>
+    let secreto = Math.floor(Math.random() * 20) + 1;
+    const input = document.getElementById("intento");
+    const mensaje = document.getElementById("mensaje");
+    const boton = document.getElementById("btnProbar");
+
+    boton.addEventListener("click", () => {
+      const valor = Number(input.value);
+      if (valor === secreto) {
+        mensaje.textContent = "¡Correcto! Adivinaste el número.";
+      } else if (valor < secreto) {
+        mensaje.textContent = "Muy bajo, intenta con uno mayor.";
+      } else {
+        mensaje.textContent = "Muy alto, intenta con uno menor.";
+      }
+    });
+  </script>
+</body>
+</html>
